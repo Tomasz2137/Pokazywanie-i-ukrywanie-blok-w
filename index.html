@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Pokaz / Ukryj blok</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <h1>Pokaz / Ukryj blok – przykład</h1>
+
+    <!-- Przycisk pokazujący blok -->
+    <button onclick="showBlock()">Pokaż blok</button>
+
+    <!-- Przycisk ukrywający blok -->
+    <button onclick="hideBlock()">Ukryj blok</button>
+
+    <!-- Blok, który będziemy pokazywać/ukrywać -->
+    <div id="myBlock" class="blok">
+        <p>To jest przykładowy blok, który można pokazywać i ukrywać.</p>
+    </div>
+
+    <script>
+function showBlock() {
+    document.getElementById('myBlock').style.display = 'block';
+}
+
+function hideBlock() {
+    document.getElementById('myBlock').style.display = 'none';
+}
+    </script>
+</body>
+</html>
