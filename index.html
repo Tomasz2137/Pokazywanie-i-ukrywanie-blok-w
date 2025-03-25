@@ -9,10 +9,8 @@
     <h1>Pokaz / Ukryj blok – przykład</h1>
 
     <!-- Przycisk pokazujący blok -->
-    <button onclick="showBlock()">Pokaż blok</button>
+    <button onclick="showBlock()">Pokaż/Ukryj blok</button>
 
-    <!-- Przycisk ukrywający blok -->
-    <button onclick="hideBlock()">Ukryj blok</button>
 
     <!-- Blok, który będziemy pokazywać/ukrywać -->
     <div id="myBlock" class="blok">
@@ -21,11 +19,12 @@
 
     <script>
 function showBlock() {
-    document.getElementById('myBlock').style.display = 'block';
-}
-
-function hideBlock() {
-    document.getElementById('myBlock').style.display = 'none';
+    const block = document.getElementById('myBlock');
+    if (block.style.display === 'block') {
+        block.style.display = 'none';
+    } else {
+        block.style.display = 'block';
+    }
 }
     </script>
 </body>
