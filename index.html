@@ -6,26 +6,38 @@
     <link rel="stylesheet" href="styl.css">
 </head>
 <body>
-    <h1>Pokaz / Ukryj blok – przykład</h1>
-
-    <!-- Przycisk pokazujący blok -->
-    <button onclick="showBlock()">Pokaż/Ukryj blok</button>
-
-
-    <!-- Blok, który będziemy pokazywać/ukrywać -->
-    <div id="myBlock" class="blok">
-        <p>To jest przykładowy blok, który można pokazywać i ukrywać.</p>
+    <h1 type="button" onclick="showBlock('MyBlock')">Artykuł 1</h1><br>
+    <button onclick="showBlock('MyBlock')">Pokaz/Ukryj blok</button><br>
+    <div id="MyBlock" class="blok">
+    <p>To jest przykładowy blok który można pokazywać i ukrywać</p>
     </div>
-
+    <h1 type="button" onclick="showBlock('MyBlock2')">Artykuł 2</h1><br>
+    <button onclick="showBlock('MyBlock2')">Pokaż/Ukryj blok </button><br>
+    <div id="MyBlock2" class="blok">
+    <p>To jest przykładowy blok który można pokazywać i ukrywać</p>
+    </div>
+    <h1 type="button" onclick="showBlock('MyBlock3')">Artykuł 3</h1><br>
+    <button onclick="showBlock('MyBlock3')">Pokaż/Ukryj blok </button><br>
+    <div id="MyBlock3" class="blok">
+    <p>To jest przykładowy blok który można pokazywać i ukrywać</p>
     <script>
-function showBlock() {
-    const block = document.getElementById('myBlock');
-    if (block.style.display === 'block') {
-        block.style.display = 'none';
-    } else {
-        block.style.display = 'block';
-    }
-}
+        function showBlock(ID) {
+            // Pobierz wszystkie elementy z klasą "blok"
+            const blocks = document.querySelectorAll('.blok');
+
+            // Ukryj wszystkie bloki
+            blocks.forEach(block => {
+                block.style.display = 'none';
+            });
+
+            // Pokaż wybrany blok
+            const selectedBlock = document.getElementById(ID);
+            if (selectedBlock.style.display === 'none' || selectedBlock.style.display === '') {
+                selectedBlock.style.display = 'block';
+            } else {
+                selectedBlock.style.display = 'none';
+            }
+        }
     </script>
 </body>
 </html>
