@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Pokaz / Ukryj blok</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <h1 type="button" onmouseover="showBlock('MyBlock')">Artykuł 1</h1><br>
+    <button onclick="showBlock('MyBlock')">Pokaz/Ukryj blok</button><br>
+    <div id="MyBlock" class="blok">
+    <p>To jest przykładowy blok który można pokazywać i ukrywać</p>
+    </div>
+    <h1 type="button" onmouseover="showBlock('MyBlock2')">Artykuł 2</h1><br>
+    <button onclick="showBlock('MyBlock2')">Pokaż/Ukryj blok </button><br>
+    <div id="MyBlock2" class="blok">
+    <p>To jest przykładowy blok który można pokazywać i ukrywać</p>
+    </div>
+    <h1 type="button" onmouseover="showBlock('MyBlock3')">Artykuł 3</h1><br>
+    <button onclick="showBlock('MyBlock3')">Pokaż/Ukryj blok </button><br>
+    <div id="MyBlock3" class="blok">
+    <p>To jest przykładowy blok który można pokazywać i ukrywać</p>
+    <script>
+        function showBlock(ID) {
+        const allBlocks = ['MyBlock', 'MyBlock2', 'MyBlock3'];
+        allBlocks.forEach(blockId => {
+        if(blockId !== ID) {
+        document.getElementById(blockId).style.display = "none";
+        }
+        });
+        const block = document.getElementById(ID);
+        if(block.style.display === "none" || block.style.display === "") {
+        block.style.display = "block";
+        } else {
+        block.style.display = "none";
+        }
+        }
+        </script>
+        </body>
+        </html>
+</body>
+</html>
