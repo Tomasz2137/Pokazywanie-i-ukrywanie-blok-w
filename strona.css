@@ -13,24 +13,28 @@ background-color: #D81B60;
 width: 70%;
 height: 50px;
 text-align: center;
-
 }
 
 #bok{
 color:white;
 background-color: #D81B60;
 text-align: center;
-float: right;
+position: absolute;
+top: 130px;
+right: 10px;
 width: 20%;
 border: 1px solid black;
 box-shadow: 18px 18px 5px;
 margin: 5px;
 padding: 12px;
-
-
+float: none;
 }
+
 body{
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-
+#artyk1, #artyk2, #artyk3, #artyk4{
+    width: 70%;
+    
+}

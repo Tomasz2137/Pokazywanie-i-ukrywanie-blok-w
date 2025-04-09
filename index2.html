@@ -2,41 +2,67 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Pokaz / Ukryj blok</title>
-    <link rel="stylesheet" href="styl.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="strona.css">
 </head>
-<body>
-    <h1 type="button" onmouseover="showBlock('MyBlock')">Artykuł 1</h1><br>
-    <button onclick="showBlock('MyBlock')">Pokaz/Ukryj blok</button><br>
-    <div id="MyBlock" class="blok">
-    <p>To jest przykładowy blok który można pokazywać i ukrywać</p>
+<header><h1>Gazeta codzienna</h1></header>
+<div id="bok">
+    <p>Pierwszym obowiązkiem dziennikarza jest nie nudzić. Drugim nie bać się. Trzecim niczego nie wyrzucać.</p>
+    <img src="obraz.jpg">
+    <div id="opis">
+        <p>Jan Nowak - 
+            Redaktor naczelny
+            gazety codziennej
+        </p>
+        <h3>Zespół</h3>
+        <div id="zespół">
+            <table>
+                <h4>Ewa - wiadomości z kraju</h4>
+                <h4>Krzysiek - sport</h4>
+                <h4>Ewelina - aktualności</h4>
+                <h4>Robert - ogłoszenia</h4>
+            </table>
+        </div>
     </div>
-    <h1 type="button" onmouseover="showBlock('MyBlock2')">Artykuł 2</h1><br>
-    <button onclick="showBlock('MyBlock2')">Pokaż/Ukryj blok </button><br>
-    <div id="MyBlock2" class="blok">
-    <p>To jest przykładowy blok który można pokazywać i ukrywać</p>
+</div>
+<div id="strona">
+<main>
+    <button type="button" id="sekcja" onclick="showBlock('artyk1')"><h2>Sekcja wiadomości z Kraju</h2></button>
+    <div id="artyk1" class="blok">
+        <h1>Szczepimy seniorów</h1>
+        <p>W obliczu pandemii COVID-19, program „Szczepimy seniorów” zyskał na znaczeniu, stając się kluczowym elementem walki z wirusem. Osoby starsze są jedną z najbardziej narażonych grup, dlatego akcja skierowana do nich ma na celu nie tylko ochronę ich zdrowia, ale również zapobieganie rozprzestrzenianiu się choroby w społeczeństwie.
+            Szczepienia seniorów odbywają się w placówkach medycznych oraz punktach szczepień, zapewniając dostęp do niezbędnych preparatów immunizacyjnych. Dzięki programowi, seniorzy mogą otrzymać szczepienia w dogodnym dla siebie czasie, co ułatwia im dbanie o zdrowie. </p>
     </div>
-    <h1 type="button" onmouseover="showBlock('MyBlock3')">Artykuł 3</h1><br>
-    <button onclick="showBlock('MyBlock3')">Pokaż/Ukryj blok </button><br>
-    <div id="MyBlock3" class="blok">
-    <p>To jest przykładowy blok który można pokazywać i ukrywać</p>
-    <script>
-        function showBlock(ID) {
-        const allBlocks = ['MyBlock', 'MyBlock2', 'MyBlock3'];
-        allBlocks.forEach(blockId => {
-        if(blockId !== ID) {
-        document.getElementById(blockId).style.display = "none";
+    <button type="button" id="sekcja" onclick="showBlock('artyk2')"><h2>Sekcja Sportowa</h2></button>
+    <div id="artyk2" class="blok">
+        <h1>Stoch i Kubacki</h1>
+        <p>Kamil Stoch i Dawid Kubacki to nazwiska, które na stałe .</p>
+    </div>
+    <button type="button" id="sekcja" onclick="showBlock('artyk3')"><h2>Sekcja Aktualności</h2></button>
+    <div id="artyk3" class="blok">
+        <h1>Dzień babci 2025</h1>
+        <p>Dzień Babci, obchodzony w Polsce 21 stycznia, to wyjątkowa okazja, aby wyrazić wdzięczność i miłość naszym ukochanym babciom. W 2025 roku, w ten szczególny dzień, wiele rodzin planuje różnorodne uroczystości, które mają na celu uczczenie roli babć w naszym życiu.
+            Sposobów na świętowanie jest wiele - od przygotowania smacznych potraw po tworzenie własnoręcznych upominków. Praktycznym pomysłem są też wspólne aktywności, takie jak spacer czy rodzinny piknik, które pozwolą spędzić czas razem i cieszyć się bliskością.
+            </p>
+    </div>
+    <button type="button" id="sekcja" onclick="showBlock('artyk4')"><h2>Sekcja Ogłoszeń</h2></button>
+    <div id="artyk4" class="blok">
+        <h1>Zaginione i znalezione</h1>
+        <p>Oława, malownicze miasto na Dolnym Śląsku, stało się miejscem wzrastającej inicjatywy społecznej dotyczącej zaginięć i odnalezień. W ostatnich latach mieszkańcy Ziemi Oławskiej zjednoczyli siły, aby wspólnie pomóc w poszukiwaniach zaginionych osób oraz zwierząt.
+            Zaginione osoby, często narażone na niebezpieczeństwo, są tematem, który budzi wiele emocji. W odpowiedzi na te wyzwania, lokalne grupy wsparcia, jak również stowarzyszenia, organizują akcje informacyjne oraz spotkania, aby edukować społeczeństwo na temat bezpieczeństwa i skutecznych sposobów poszukiwań.</p>
+    </div>
+</main>
+</div>
+<script>
+    function showBlock(ID) {
+        document.getElementById('artyk1').style.display = "none";
+        document.getElementById('artyk2').style.display = "none";
+        document.getElementById('artyk3').style.display = "none";
+        document.getElementById('artyk4').style.display = "none";
+        if (ID) {
+            document.getElementById(ID).style.display = "block";
         }
-        });
-        const block = document.getElementById(ID);
-        if(block.style.display === "none" || block.style.display === "") {
-        block.style.display = "block";
-        } else {
-        block.style.display = "none";
-        }
-        }
-        </script>
-        </body>
-        </html>
-</body>
+    }
+</script>
 </html>

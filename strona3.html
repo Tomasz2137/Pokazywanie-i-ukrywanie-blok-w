@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firma IT</title>
+    <link rel="stylesheet" href="strona3.css">
+</head>
+<header>
+    <h3 id="przyciski">Strona główna</h3>
+    <h3 id="przyciski">Usługi</h3>
+    <h3 id="przyciski">Kontakt</h3>
+    <img src="logo.png">
+</header>
+<body>
+    <div id="baner">
+        <img src="baner.gif">
+    </div>
+    <div id="main">
+        <h2>Kontakt</h2>
+        <form>
+            <label for="imie">Imię:</label>
+            <input type="text" id="imie" name="imie"><br>
+            <label for="nazwisko">Nazwisko:</label>
+            <input type="text" id="nazwisko" name="nazwisko"><br>
+            <label for="email">E-mail:</label>
+            <input type="text" id="email" name="email"><br>
+            <label for="zgłoszenie">Zgłoszenie:</label>
+            <input type="text" id="zgłoszenie" name="zgłoszenie"><br>
+            <input type="checkbox" id="regulamin" name="regulamin"> <label for="regulamin">Zapoznałam/em się z regulaminem</label><br>
+            <button type="reset">Resetuj</button> <button type="button">Prześlij</button>
+        </form>
+    </div>
+    <div id="result"></div>
+</body>
+<script>
+    function skrypt() {
+        const imie = document.getElementById('imie').value;
+        const nazwisko = document.getElementById('nazwisko').value;
+        const email = document.getElementById('email').value;
+        const zgloszenie = document.getElementById('zgłoszenie').value;
+        const regulamin = document.getElementById('regulamin').checked ? "Regulamin zaakceptowany" : "Regulamin niezaakceptowany";
+        const resultDiv = document.getElementById('result');
+        resultDiv.innerHTML = `
+            <p>${imie} ${nazwisko} - ${email}</p>
+            <p>Zgłoszenie: ${zgloszenie}</p>
+            <p>${regulamin}</p>
+        `;
+    }
+    document.querySelector('button[type="button"]').addEventListener('click', skrypt);
+</script>
+</html>
